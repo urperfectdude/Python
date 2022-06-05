@@ -122,5 +122,6 @@ if not(validate_string_answer(door, correct_color)):
   else:
     print("You are eaten by beasts.")
     exit("Game Over")
+    
 
 input("You win! Congratulations. (Press Enter...)")
