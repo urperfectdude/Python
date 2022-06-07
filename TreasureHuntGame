@@ -47,6 +47,7 @@ print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.") 
 difficulty = input("Choose your game difficulty: Easy(E), Intermediate(I), or Hard(H) ")
 
+
 if validate_string_answer(difficulty, 'easy'):
   difficulty = "easy"
 elif validate_string_answer(difficulty, 'intermediate'):
