@@ -1,0 +1,90 @@
+# import random
+
+# words_list = ["hello", "namaste", "gaandu", "madhrochod", "fuckoff", "asshole", "bitch", "worthless","dickhead"]
+# chosen = random.choice(words_list)
+# end = False
+# display = []
+# word_len = len(chosen)
+# lives = 4
+
+# for _ in range(word_len):
+#     display += "_"
+
+# while not end:
+#     guess = input("Guess a letter: ").lower()
+    
+#     for position in range(word_len):
+#         letter = chosen[position]
+#         #print (f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+#         if letter == guess :
+#             display[position] = letter 
+        
+#         if guess not in chosen:
+#             lives -= 1
+#             if lives == 0:
+#                 end=True
+#                 print ("You Lose")
+#                 print (f'The solution was {chosen}')
+
+
+#     print(f"{' '.join(display)}")
+
+#     if "_" not in display:
+#         end = True
+#         print("You Win")
+
+
+import random
+from hangman_art import stages, logo
+from hangman_words import word_list
+
+print(logo)
+game_is_finished = False
+lives = len(stages) - 1
+
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+
+display = []
+for _ in range(word_length):
+    display += "_"
+
+while not game_is_finished:
+    guess = input("Guess a letter: ").lower()
+
+    #Use the clear() function imported from replit to clear the output between guesses.
+    
+
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+    print(f"{' '.join(display)}")
+
+    if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not in the word. You lose a life.")
+        lives -= 1
+
+        hint = int (word_length / 2)
+        if lives == 2 or 1:
+            print ("Hint: "+chosen_word[0:hint+1])
+            
+        elif lives == 0:
+            game_is_finished = True
+            print(f"You lose, Answer was {chosen_word}")
+        
+    
+    if not "_" in display:
+        game_is_finished = True
+        print("You win.")
+
+    print(stages[lives])
+
+
+
+
+
+
