@@ -333,7 +333,7 @@ def format_data(account):
     name = account["name"]
     description = account["description"]
     country = account["country"]
-    # print(f'{name}: {account["follower_count"]}')
+    print(f'{name}: {account["follower_count"]}')
     return f"{name}, a {description}, from {country}"
 
 def check_answer(guess, a_followers, b_followers):
@@ -376,5 +376,8 @@ def game():
     else:
         game_should_continue = False
         print(f"Sorry, that's wrong. Final score: {score}")
+    play = input("Dow want to restart? y/n")
 
-game()
+play = input("Do you want to start? y/n")
+while play == 'y':
+    game()
