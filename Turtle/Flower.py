@@ -61,7 +61,7 @@ rotate=int(90)
 def Circles(t,size):
     for i in range(4):
         t.circle(size)
-        size=size-20
+        size=size-21
 def Cppsecrets1(t,size,repeat):
     for i in range (repeat):
         Circles(t,size)
